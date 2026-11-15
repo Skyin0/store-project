@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Women - Best Price Store</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<div class="logo">BPS</div>
+<h1>BEST PRICE STORE</h1>
+<p>Address: Najran, Saudi Arabia | Phone: 0550000000</p>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="men.html">Men</a>
+<a href="women.html">Women</a>
+<a href="kids.html">Kids</a>
+<a href="perfumes.html">Perfumes</a>
+<a href="gifts.html">Gifts</a>
+<a href="#" onclick="showCartAlert()" class="nav-cart">Cart (<span id="cartCount">0</span>)</a>
+</nav>
+
+<div class="top-search">
+    <input type="text" id="searchInput" placeholder="Search (Dress, Bag, Shoes, Men, Kids)...">
+    <button onclick="searchStore()">Search</button>
+    <button onclick="resetSearch()" style="background-color: #777 !important;">Reset</button>
+    <div id="searchResultBox" style="margin-top: 10px; font-size: 15px; color: #3b2f2f;"></div>
+</div>
+
+<h2 class="section-title">Women's Collection</h2>
+<p class="page-description">Click on any product image to view details, sizes, and colors.</p>
+
+<table class="products-table" border="1" cellpadding="10" cellspacing="0">
+<tr>
+    <td id="cell1"><a href="women-product1.html"><img src="../Pic/women1.jpg" alt="Women Dress"></a></td>
+    <td id="cell2"><a href="women-product2.html"><img src="../Pic/women2.jpg" alt="Women Handbag"></a></td>
+    <td id="cell3"><a href="women-product3.html"><img src="../Pic/women3.jpg" alt="Women Shoes"></a></td>
+</tr>
+</table>
+
+<footer class="realistic-footer">
+    <table class="footer-table">
+        <tr>
+            <td>
+                <h4>Departments</h4>
+                <a href="men.html">Men's Fashion</a>
+                <a href="women.html">Women's Collection</a>
+                <a href="kids.html">Kids' Wear</a>
+                <a href="perfumes.html">Perfumes</a>
+                <a href="gifts.html">Gifts</a>
+            </td>
+            <td>
+                <h4>Customer Service</h4>
+                <a href="#" onclick="alert('Free delivery in Najran for orders over 200 SAR.')">Shipping & Delivery</a>
+                <a href="#" onclick="alert('Returns accepted within 14 days with receipt.')">Return Policy</a>
+                <a href="#" onclick="alert('Contact us at: 0550000000')">Help & Support</a>
+            </td>
+            <td>
+                <h4>Store Information</h4>
+                <p>Location: Najran, Saudi Arabia</p>
+                <p>Phone: 0550000000</p>
+                <p>Working Hours: 9:00 AM - 11:00 PM</p>
+            </td>
+        </tr>
+    </table>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Best Price Store - All Rights Reserved</p>
+    </div>
+</footer>
+
+<script>
+if (localStorage.getItem("storeCartCount") != null) {
+    document.getElementById("cartCount").innerHTML = localStorage.getItem("storeCartCount");
+}
+
+function showCartAlert() {
+    var count = document.getElementById("cartCount").innerHTML;
+    alert("You have " + count + " item(s) in your shopping cart.");
+}
+
+function searchStore() {
+    var text = document.getElementById("searchInput").value.toLowerCase();
+    var result = document.getElementById("searchResultBox");
+
+    if (text == "dress") {
+        document.getElementById("cell1").style.display = "";
+        document.getElementById("cell2").style.display = "none";
+        document.getElementById("cell3").style.display = "none";
+        result.innerHTML = "Found: <a href='women-product1.html' style='color:#b8860b; font-weight:bold;'>Elegant Beige Dress</a>";
+    } else if (text == "bag" || text == "handbag") {
+        document.getElementById("cell1").style.display = "none";
+        document.getElementById("cell2").style.display = "";
+        document.getElementById("cell3").style.display = "none";
+        result.innerHTML = "Found: <a href='women-product2.html' style='color:#b8860b; font-weight:bold;'>Classic Leather Handbag</a>";
+    } else if (text == "shoes" || text == "heels") {
+        document.getElementById("cell1").style.display = "none";
+        document.getElementById("cell2").style.display = "none";
+        document.getElementById("cell3").style.display = "";
+        result.innerHTML = "Found: <a href='women-product3.html' style='color:#b8860b; font-weight:bold;'>Nude Classic Heels</a>";
+    } else if (text == "men") {
+        result.innerHTML = "Department found: <a href='men.html' style='color:#b8860b; font-weight:bold;'>Go to Men's Section</a>";
+    } else if (text == "kids") {
+        result.innerHTML = "Department found: <a href='kids.html' style='color:#b8860b; font-weight:bold;'>Go to Kids' Section</a>";
+    } else {
+        result.innerHTML = "<span style='color:red;'>No results found. Try: Dress, Bag, Shoes, Men, or Kids.</span>";
+    }
+}
+
+function resetSearch() {
+    document.getElementById("searchInput").value = "";
+    document.getElementById("searchResultBox").innerHTML = "";
+    document.getElementById("cell1").style.display = "";
+    document.getElementById("cell2").style.display = "";
+    document.getElementById("cell3").style.display = "";
+}
+</script>
+</body>
+</html>

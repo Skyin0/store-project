@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Men Watch - Best Price Store</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<div class="logo">BPS</div>
+<h1>BEST PRICE STORE</h1>
+<p>Address: Najran, Saudi Arabia | Phone: 0550000000</p>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="men.html">Men</a>
+<a href="women.html">Women</a>
+<a href="kids.html">Kids</a>
+<a href="perfumes.html">Perfumes</a>
+<a href="gifts.html">Gifts</a>
+<a href="#" onclick="showCartAlert()" class="nav-cart">Cart (<span id="cartCount">0</span>)</a>
+</nav>
+
+<div id="popupMessage" class="popup-toast"></div>
+
+<div style="text-align: center; padding: 30px;">
+    <!-- هنا الصورة مربوطة بـ id="productImg" -->
+    <img id="productImg" src="../Pic/men3.jpg" alt="Men Watch" style="width: 700px; height: 500px; object-fit: cover; border-radius: 5px; border: 1px solid #ccc;">
+    
+    <h2 style="color: #3b2f2f; margin-top: 20px;">Leather Strap Watch</h2>
+    <p style="color: #555; font-size: 16px;">Water-resistant classic wristwatch with stainless steel case and leather strap.</p>
+    <h3 style="color: #b8860b; margin: 15px 0;">Price: 320 SAR</h3>
+
+    <div style="margin: 20px 0;">
+        <label style="font-weight: bold; color: #3b2f2f;">Strap Color: </label>
+        <!-- هنا القائمة تستدعي دالة changeColor() عند تغيير اللون -->
+        <select id="optionSelect" onchange="changeColor()" style="padding: 8px 12px; border: 1px solid #3b2f2f; border-radius: 4px; margin-right: 10px;">
+            <option value="Dark Brown">Dark Brown</option>
+            <option value="Classic Black">Classic Black</option>
+            <option value="Tan Leather">Tan Leather</option>
+        </select>
+
+        <label style="font-weight: bold; color: #3b2f2f;">Quantity: </label>
+        <input type="number" id="qtyInput" value="1" min="1" max="10" style="width: 55px; padding: 8px; border: 1px solid #3b2f2f; border-radius: 4px; margin-right: 10px;">
+
+        <button onclick="addToCart()" class="store-btn" style="background-color: #b8860b !important;">Add to Cart</button>
+    </div>
+    
+    <a href="men.html" class="store-btn" style="margin-top: 10px;">Back to Men's Collection</a>
+</div>
+
+<footer class="realistic-footer">
+    <table class="footer-table">
+        <tr>
+            <td><h4>Departments</h4><a href="men.html">Men's Fashion</a><a href="women.html">Women's Collection</a><a href="kids.html">Kids' Wear</a><a href="perfumes.html">Perfumes</a><a href="gifts.html">Gifts</a></td>
+            <td><h4>Customer Service</h4><a href="#" onclick="alert('Free delivery in Najran for orders over 200 SAR.')">Shipping & Delivery</a><a href="#" onclick="alert('Returns accepted within 14 days with receipt.')">Return Policy</a><a href="#" onclick="alert('Contact us at: 0550000000')">Help & Support</a></td>
+            <td><h4>Store Information</h4><p>Location: Najran, Saudi Arabia</p><p>Phone: 0550000000</p><p>Working Hours: 9:00 AM - 11:00 PM</p></td>
+        </tr>
+    </table>
+    <div class="footer-bottom"><p>&copy; 2026 Best Price Store - All Rights Reserved</p></div>
+</footer>
+
+<script>
+var currentCount = 0;
+if (localStorage.getItem("storeCartCount") != null) {
+    currentCount = parseInt(localStorage.getItem("storeCartCount"));
+    document.getElementById("cartCount").innerHTML = currentCount;
+}
+
+// هذه الدالة هي التي تبدل مسار الصورة تلقائياً حسب اللون المختار
+function changeColor() {
+    var color = document.getElementById("optionSelect").value;
+    var img = document.getElementById("productImg");
+
+    if (color == "Dark Brown") {
+        img.src = "../Pic/men3.jpg";
+    } else if (color == "Classic Black") {
+        img.src = "../Pic/men3-black.jpg";
+    } else if (color == "Tan Leather") {
+        img.src = "../Pic/men3-tan.jpg";
+    }
+}
+
+function addToCart() {
+    var chosenOption = document.getElementById("optionSelect").value;
+    var quantity = parseInt(document.getElementById("qtyInput").value);
+    currentCount = currentCount + quantity;
+    localStorage.setItem("storeCartCount", currentCount);
+    document.getElementById("cartCount").innerHTML = currentCount;
+
+    var popup = document.getElementById("popupMessage");
+    popup.innerHTML = "Added to Cart! (Color: " + chosenOption + " | Qty: " + quantity + ")";
+    popup.style.display = "block";
+    setTimeout(function() { popup.style.display = "none"; }, 3000);
+}
+
+function showCartAlert() {
+    alert("You have " + currentCount + " item(s) in your shopping cart.");
+}
+</script>
+</body>
+</html>

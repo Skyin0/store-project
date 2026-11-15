@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home - Best Price Store</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<div class="logo">BPS</div>
+<h1>BEST PRICE STORE</h1>
+<p>Address: Najran, Saudi Arabia | Phone: 0550000000</p>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="men.html">Men</a>
+<a href="women.html">Women</a>
+<a href="kids.html">Kids</a>
+<a href="perfumes.html">Perfumes</a>
+<a href="gifts.html">Gifts</a>
+<a href="#" onclick="showCartAlert()" class="nav-cart">Cart (<span id="cartCount">0</span>)</a>
+</nav>
+
+<div class="top-search">
+    <input type="text" id="globalSearch" placeholder="Search (Men, Women, Kids, Perfumes, Gifts, Dress, Bag)...">
+    <button onclick="smartSearch()">Search</button>
+    <button onclick="resetGlobalSearch()" style="background-color: #777 !important;">Reset</button>
+    <div id="searchResults" style="margin-top: 12px; font-size: 15px; color: #3b2f2f;"></div>
+</div>
+
+<h2 class="section-title">Shop by Category</h2>
+<p class="page-description">Welcome to Best Price Store. Choose a category below to start shopping.</p>
+
+<table class="products-table" border="1" cellpadding="15" cellspacing="0">
+<tr>
+    <td id="catMen">
+        <a href="men.html"><img src="../Pic/men.jpg" alt="Men's Section"></a>
+        <h3 style="color: #3b2f2f; margin: 10px 0;">Men's Fashion</h3>
+        <a href="men.html" class="store-btn">Shop Men</a>
+    </td>
+    <td id="catWomen">
+        <a href="women.html"><img src="../Pic/women.jpg" alt="Women's Section"></a>
+        <h3 style="color: #3b2f2f; margin: 10px 0;">Women's Fashion</h3>
+        <a href="women.html" class="store-btn">Shop Women</a>
+    </td>
+    <td id="catKids">
+        <a href="kids.html"><img src="../Pic/kids.jpg" alt="Kids' Section"></a>
+        <h3 style="color: #3b2f2f; margin: 10px 0;">Kids' Wear</h3>
+        <a href="kids.html" class="store-btn">Shop Kids</a>
+    </td>
+</tr>
+<tr>
+    <td id="catPerfumes">
+        <a href="perfumes.html"><img src="../Pic/perfumes.jpg" alt="Perfumes Section"></a>
+        <h3 style="color: #3b2f2f; margin: 10px 0;">Perfumes</h3>
+        <a href="perfumes.html" class="store-btn">Shop Perfumes</a>
+    </td>
+    <td id="catGifts">
+        <a href="gifts.html"><img src="../Pic/gifts.jpg" alt="Gifts Section"></a>
+        <h3 style="color: #3b2f2f; margin: 10px 0;">Gifts</h3>
+        <a href="gifts.html" class="store-btn">Shop Gifts</a>
+    </td>
+    <td style="background-color: #f5f0e6; text-align: center; padding: 20px;">
+        <h3 style="color: #b8860b;">Special Offer!</h3>
+        <p style="color: #3b2f2f; font-size: 14px;">Free shipping inside Najran on orders above 200 SAR.</p>
+    </td>
+</tr>
+</table>
+
+<footer class="realistic-footer">
+    <table class="footer-table">
+        <tr>
+            <td>
+                <h4>Departments</h4>
+                <a href="men.html">Men's Fashion</a>
+                <a href="women.html">Women's Collection</a>
+                <a href="kids.html">Kids' Wear</a>
+                <a href="perfumes.html">Perfumes</a>
+                <a href="gifts.html">Gifts</a>
+            </td>
+            <td>
+                <h4>Customer Service</h4>
+                <a href="#" onclick="alert('Free delivery in Najran for orders over 200 SAR.')">Shipping & Delivery</a>
+                <a href="#" onclick="alert('Returns accepted within 14 days with receipt.')">Return Policy</a>
+                <a href="#" onclick="alert('Contact us at: 0550000000')">Help & Support</a>
+            </td>
+            <td>
+                <h4>Store Information</h4>
+                <p>Location: Najran, Saudi Arabia</p>
+                <p>Phone: 0550000000</p>
+                <p>Working Hours: 9:00 AM - 11:00 PM</p>
+            </td>
+        </tr>
+    </table>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Best Price Store - All Rights Reserved</p>
+    </div>
+</footer>
+
+<script>
+if (localStorage.getItem("storeCartCount") != null) {
+    document.getElementById("cartCount").innerHTML = localStorage.getItem("storeCartCount");
+}
+
+function showCartAlert() {
+    var count = document.getElementById("cartCount").innerHTML;
+    alert("You have " + count + " item(s) in your shopping cart.");
+}
+
+function smartSearch() {
+    var text = document.getElementById("globalSearch").value.toLowerCase();
+    var res = document.getElementById("searchResults");
+
+    if (text == "men" || text == "watch" || text == "shirt") {
+        res.innerHTML = "Found: <a href='men.html' style='color:#b8860b; font-weight:bold;'>Go to Men's Fashion</a>";
+    } else if (text == "women" || text == "dress" || text == "bag" || text == "heels") {
+        res.innerHTML = "Found: <a href='women.html' style='color:#b8860b; font-weight:bold;'>Go to Women's Collection</a>";
+    } else if (text == "kids" || text == "children" || text == "backpack") {
+        res.innerHTML = "Found: <a href='kids.html' style='color:#b8860b; font-weight:bold;'>Go to Kids' Wear</a>";
+    } else if (text == "perfumes" || text == "perfume") {
+        res.innerHTML = "Found: <a href='perfumes.html' style='color:#b8860b; font-weight:bold;'>Go to Perfumes</a>";
+    } else if (text == "gifts" || text == "gift") {
+        res.innerHTML = "Found: <a href='gifts.html' style='color:#b8860b; font-weight:bold;'>Go to Gifts</a>";
+    } else {
+        res.innerHTML = "<span style='color:red;'>No results found. Try: Men, Women, Kids, Perfumes, or Gifts.</span>";
+    }
+}
+
+function resetGlobalSearch() {
+    document.getElementById("globalSearch").value = "";
+    document.getElementById("searchResults").innerHTML = "";
+}
+</script>
+</body>
+</html>

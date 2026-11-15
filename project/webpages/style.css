@@ -1,0 +1,219 @@
+/* General Style */
+* {box-sizing: border-box;}
+body {margin: 0;font-family: Arial, sans-serif;background-color: #f8f5ef;color: #29251f;}
+/* Header */
+header {background-color: #29251f;color: white;padding: 22px;text-align: center;}
+
+.logo {background-color: #d6b36a;
+color: #29251f;width: 55px;height: 55px;
+line-height: 55px;border-radius: 50%;margin: auto;
+font-weight: bold;font-size: 18px;}
+header h1 {color: #d6b36a;letter-spacing: 3px;margin: 12px 0;}
+header p {margin: 5px;font-size: 14px;}
+
+/* Navigation */
+nav {background-color: #e8dfd0;padding: 16px;text-align: center;}
+nav a {color: #29251f;text-decoration: none;margin: 0 12px;font-weight: bold;}
+nav a:hover {color: #a47b35;}
+
+/* Welcome Section */
+.welcome {text-align: center;padding: 45px 20px 25px;}
+.welcome h2 {font-size: 34px;color: #8c682f;}
+.welcome p {font-size: 17px;color: #665e53;}
+button {background-color: #29251f;color: white;border: none;padding: 12px 25px;cursor: pointer;border-radius: 5px;}
+button:hover {background-color: #a47b35;}
+
+/* Search */
+.search-box {text-align: center;margin: 20px;}
+.search-box input {width: 300px;max-width: 90%;padding: 12px;border: 1px solid #c8b99f;border-radius: 5px;}
+
+/* Section Title */
+.section-title {text-align: center;color: #8c682f;margin-top: 35px;}
+
+/* Categories */
+.categories {display: flex;flex-wrap: wrap;justify-content: center;gap: 25px;padding: 25px;}
+.category {background-color: white;width: 230px;padding: 15px;text-align: center;border-radius: 10px;box-shadow: 0 3px 12px #00000012;}
+.category img {width: 100%;height: 190px;object-fit: cover;border-radius: 7px;}
+.category h3 {color: #8c682f;font-size: 21px;}
+.category p {color: #665e53;}
+.shop-button {display: inline-block;background-color: #29251f;color: white;text-decoration: none;padding: 10px 20px;border-radius: 5px;}
+.shop-button:hover {background-color: #a47b35;}
+
+/* Footer */
+footer {background-color: #29251f;color: white;text-align: center;padding: 20px;margin-top: 40px;}
+
+/* Category Page */
+.page-description {text-align: center;color: #665e53;}
+
+/* Products Table */
+.products-table {width: 80%;margin: 30px auto;border-collapse: collapse;background-color: white;}
+.products-table td {text-align: center;padding: 15px;}
+.products-table img {width: 180px;height: 180px;object-fit: contain;}
+
+/* Product Details Page */
+.product-details {text-align: center;padding: 30px 20px;}
+.product-details h2 {color: #8c682f;}
+.product-details img {width: 700px;height: 500px;max-width: 100%;object-fit: contain;background-color: white;}
+.product-details h3 {color: #8c682f;margin-top: 20px;}
+.product-details p {color: #665e53;font-size: 17px;margin-bottom: 25px;}
+
+
+
+
+
+/* === تنسيقات المتجر المطور (ضمن المنهج) === */
+
+/* 1. شريط البحث العلوي */
+.top-search {
+    background-color: #f5f0e6 !important;
+    padding: 15px !important;
+    text-align: center !important;
+    border-bottom: 1px solid #d4af37 !important;
+}
+.top-search input {
+    padding: 8px 15px !important;
+    width: 300px !important;
+    border: 1px solid #3b2f2f !important;
+    border-radius: 4px !important;
+    font-size: 14px !important;
+}
+.top-search button {
+    padding: 8px 18px !important;
+    background-color: #3b2f2f !important;
+    color: #ffebcd !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    font-weight: bold !important;
+}
+.top-search button:hover {
+    background-color: #b8860b !important;
+    color: white !important;
+}
+
+/* 2. أزرار الموقع الموحدة */
+.store-btn {
+    display: inline-block !important;
+    background-color: #3b2f2f !important;
+    color: #ffebcd !important;
+    padding: 10px 22px !important;
+    text-decoration: none !important;
+    border: none !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+}
+.store-btn:hover {
+    background-color: #b8860b !important;
+    color: white !important;
+}
+
+/* 3. صندوق السلة التفاعلي في صفحة المنتج */
+.cart-box {
+    max-width: 500px !important;
+    margin: 25px auto !important;
+    padding: 20px !important;
+    background-color: #ffffff !important;
+    border: 2px solid #d4af37 !important;
+    border-radius: 8px !important;
+    text-align: left !important;
+    display: none;
+}
+.cart-box h3 {
+    color: #3b2f2f !important;
+    border-bottom: 1px solid #ddd !important;
+    padding-bottom: 10px !important;
+    margin-top: 0 !important;
+}
+.cart-item-row {
+    padding: 8px 0 !important;
+    border-bottom: 1px dashed #ccc !important;
+    color: #333 !important;
+    font-size: 15px !important;
+}
+
+/* 4. الفوتر الواقعي المقسم لـ 3 أعمدة */
+.realistic-footer {
+    background-color: #3b2f2f !important;
+    color: #ffebcd !important;
+    padding: 35px 8% 20px 8% !important;
+    margin-top: 50px !important;
+    text-align: left !important;
+}
+.footer-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    border: none !important;
+    background: transparent !important;
+}
+.footer-table td {
+    border: none !important;
+    vertical-align: top !important;
+    width: 33.3% !important;
+    padding: 10px 20px !important;
+    text-align: left !important;
+    background: transparent !important;
+}
+.footer-table h4 {
+    color: #d4af37 !important;
+    font-size: 17px !important;
+    border-bottom: 1px solid #5c4b4b !important;
+    padding-bottom: 8px !important;
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+}
+.footer-table a {
+    display: block !important;
+    color: #ffebcd !important;
+    text-decoration: none !important;
+    margin-bottom: 10px !important;
+    font-size: 14px !important;
+    background: none !important;
+    padding: 0 !important;
+}
+.footer-table a:hover {
+    color: #d4af37 !important;
+    text-decoration: underline !important;
+}
+.footer-table p {
+    color: #ffebcd !important;
+    font-size: 14px !important;
+    margin: 0 0 10px 0 !important;
+}
+.footer-bottom {
+    text-align: center !important;
+    border-top: 1px solid #5c4b4b !important;
+    padding-top: 15px !important;
+    margin-top: 25px !important;
+    font-size: 13px !important;
+    color: #ffebcd !important;
+}
+
+
+
+
+/* === السلة الصغيرة في شريط التنقل === */
+.nav-cart {
+    background-color: #b8860b !important;
+    color: white !important;
+    padding: 5px 12px !important;
+    border-radius: 15px !important;
+    font-weight: bold !important;
+    margin-left: 15px !important;
+}
+
+/* === الرسالة المنبثقة المؤقتة === */
+.popup-toast {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #3b2f2f;
+    color: #ffebcd;
+    border: 2px solid #b8860b;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 15px;
+    z-index: 1000;
+}
